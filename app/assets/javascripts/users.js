@@ -22,6 +22,8 @@ $(document).ready(function(){
         return false;
     }); // form submission
     
+});   //document ready
+    
     function stripeResponseHandler (status, response) {        // status and response coming from stripe
         // Get a reference to the form:
         var f = $("#new_user");                             //the entire form is called new_user 
@@ -35,4 +37,3 @@ $(document).ready(function(){
         // Submit the form:
         f.get(0).submit();            // in case of multiple forms, get(0) makes sure to grab the first one 
     }
-});
