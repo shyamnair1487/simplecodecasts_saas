@@ -28,8 +28,8 @@ $(document).ready(function(){
         
         if (response.error) {
             // Show the errors on the form
-            $form.find('.payment-errors').text(response.error.message);
-            $form.find('button').prop('disabled', false); // Re-enable submission
+            f.find('.payment-errors').text(response.error.message);
+            f.find('button').prop('disabled', false); // Re-enable submission
         } else {
         // Get a reference to the form:
         var f = $("#new_user");                             //the entire form is called new_user 
