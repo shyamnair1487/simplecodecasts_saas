@@ -26,13 +26,15 @@ $(document).ready(function(){
     
     function stripeResponseHandler (status, response) {        // status and response coming from stripe
         
+        // Get a reference to the form:
+        var f = $("#new_user");                             //the entire form is called new_user 
+        
         if (response.error) {
             // Show the errors on the form
             f.find('.payment-errors').text(response.error.message);
             f.find('button').prop('disabled', false); // Re-enable submission
         } else {
-        // Get a reference to the form:
-        var f = $("#new_user");                             //the entire form is called new_user 
+        
         
         // Get the token from the response:
         var token = response.id;
