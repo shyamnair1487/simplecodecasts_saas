@@ -27,7 +27,9 @@ $(document).ready(function(){
     function stripeResponseHandler (status, response) {        // status and response coming from stripe
         
         if (response.error) {
-            reportError(response.error.message);
+            // Show the errors on the form
+            $form.find('.payment-errors').text(response.error.message);
+            $form.find('button').prop('disabled', false); // Re-enable submission
         } else {
         // Get a reference to the form:
         var f = $("#new_user");                             //the entire form is called new_user 
